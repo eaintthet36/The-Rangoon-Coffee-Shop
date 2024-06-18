@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="flex items-center justify-center my-4">
+    <div class="bg-[#F8F4E1] p-6 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-[28px] my-3 w-[360px] text-center">Register</h1>
+      <form action="" [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+        <div class="field">
+          <label for="fullname">Full Name</label>
+          <input
+            type="fullname"
+            name="fullname"
+            placeholder="Type your fullname"
+            matInput
+            class="border-2 rounded-md w-full"
+            formControlName="fullName"
+          />
+        </div>
+        <small
+          *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+          class="text-red-400 block p-error"
+        >
+          <div *ngIf="fullName.errors?.['required']">Full Name is require.</div>
+        </small>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Type your email"
+            matInput
+            class="border-2 rounded-md w-full"
+            formControlName="email"
+          />
+        </div>
+        <small
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="text-red-400 block p-error"
+        >
+          <div *ngIf="email.errors?.['required']">Email is require.</div>
+          <div *ngIf="email.errors?.['email']">
+            Email should be valid.
+          </div></small
+        >
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Type your password"
+            matInput
+            class="border-2 rounded-md w-full"
+            formControlName="password"
+          />
+        </div>
+        <small
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="text-red-400 block p-error"
+        >
+          <div *ngIf="password.errors?.['required']">
+            Password is require.
+          </div></small
+        >
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Type your confirmPassword"
+            matInput
+            class="border-2 rounded-md w-full"
+            formControlName="confirmPassword"
+          />
+        </div>
+        <small
+          *ngIf="
+            confirmPassword.invalid &&
+            (confirmPassword.dirty || confirmPassword.touched)
+          "
+          class="text-red-400 block p-error"
+        >
+          <div *ngIf="confirmPassword.errors?.['required']">
+            Confrim Password.
+          </div>
+        </small>
+        <small
+          *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"
+          class="text-red-400 block p-error"
+        >
+          Passwords must match.
+        </small>
+
+        <button
+          class="mat-button rounded-lg bg-[#543310] px-3 py-2 mt-2 text-white w-full disabled:bg-[#AF8F6F] disabled:text-white"
+          [disabled]="registerForm.invalid"
+          type="submit"
+        >
+          REGISTER
+        </button>
+        <div class="mt-2 text-center">
+          Already a member?
+          <a href="" routerLink="/login" class="text-blue-500">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

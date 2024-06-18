@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="flex items-center justify-center my-4">
+    <div class="bg-[#F8F4E1] p-6 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-2xl my-3 text-center">Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="LoginUser()">
+        <div class="mb-4">
+          <label for="email" class="block mb-1">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Type your email"
+            matInput
+            class="border-2 rounded-md w-full p-2"
+            formControlName="email"
+          />
+          <small
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="text-red-400 block p-error mt-1"
+          >
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Email should be valid.</div>
+          </small>
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="block mb-1">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Type your password"
+            matInput
+            class="border-2 rounded-md w-full p-2"
+            formControlName="password"
+          />
+          <small
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="text-red-400 block p-error mt-1"
+          >
+            <div *ngIf="password.errors?.['required']">
+              Password is required.
+            </div>
+          </small>
+        </div>
+
+        <button
+          class="rounded-lg bg-[#543310] px-3 py-2 mt-2 text-white w-full disabled:bg-[#AF8F6F] disabled:text-white"
+          [disabled]="loginForm.invalid"
+          type="submit"
+        >
+          SIGN IN
+        </button>
+        <div class="mt-4 text-center">
+          Not a member?
+          <a href="" routerLink="/register" class="text-blue-500">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
