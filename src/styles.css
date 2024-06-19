@@ -25,3 +25,17 @@ h1 {
 .menubtn:hover {
   background-color: #74512d;
 }
+
+.buybtn {
+  background-color: #543310;
+  color: white;
+  border: none;
+  padding: 2px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.buybtn:hover {
+  background-color: #74512d;
+}

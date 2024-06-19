@@ -7,19 +7,24 @@
       class="w-screen"
     />
   </div>
-  <div>
-    <img src="assets/images/homepage/cup.png" alt="cup" />
+  <div class="relative">
+    <img src="assets/images/homepage/cup.png" alt="cup" class="w-16 h-16" />
+    <!-- Adjust width and height as needed -->
+    <span
+      class="absolute top-0 right-0 left-9 bg-[#AF8F6F] text-white rounded-full w-6 h-6 flex items-center justify-center"
+      >{{ itemNumber }}</span
+    >
   </div>
 </div>
 
 <!-- navbar -->
 <div class="flex justify-between">
-  <div class="">
+  <a routerLink="/">
     <img src="assets/images/homepage/logo.png" alt="logo" class="" />
-  </div>
+  </a>
 
   <div class="flex justify-center items-center gap-5 cursor-pointer">
-    <span><a href=""> Menu </a></span>
+    <span><a routerLink="/"> Home </a></span>
     <span><a href=""> About Us </a></span>
     <span><a href=""> Contact Us </a></span>
   </div>
