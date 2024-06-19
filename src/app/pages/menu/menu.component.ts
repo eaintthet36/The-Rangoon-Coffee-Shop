@@ -69,8 +69,8 @@ export class MenuComponent implements OnInit{
     }
 ]
 constructor(private menuService: MenuService) {}
-addToCart(product: { title: any, description: any, price: any }) {
-  this.cart.push(product.title, product.description, product.price);
+addToCart(product: { title: any}) {
+  this.cart.push(product.title);
   const itemNumber = this.cart.length;
   console.log('Current cart:', this.cart, 'Length', itemNumber);
   this.menuService.updateItemNumber(itemNumber); // Update itemNumber in the service
