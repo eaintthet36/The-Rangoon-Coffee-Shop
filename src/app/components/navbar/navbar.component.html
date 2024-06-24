@@ -1,60 +1,73 @@
-<div class="container mx-auto">
-  <!-- header line -->
-  <div class="flex items-center gap-3">
-    <div>
-      <img src="assets/images/homepage/headerline.png" alt="headline" />
-    </div>
-    <div>
-      <img src="assets/images/homepage/cup.png" alt="cup" />
-    </div>
+<!-- header line -->
+<div class="flex items-center gap-3">
+  <div>
+    <img
+      src="assets/images/homepage/headerline.png"
+      alt="headline"
+      class="w-screen"
+    />
+  </div>
+  <div>
+    <img src="assets/images/homepage/cup.png" alt="cup" class="w-16 h-16" />
+  </div>
+</div>
+
+<!-- navbar -->
+<div class="flex justify-between">
+  <a routerLink="/">
+    <img src="assets/images/homepage/logo.png" alt="logo" class="" />
+  </a>
+
+  <div class="flex justify-center items-center gap-5 cursor-pointer">
+    <span><a routerLink="/"> Home </a></span>
+    <span><a routerLink="/about-us"> About Us </a></span>
+    <span><a href=""> Contact Us </a></span>
   </div>
 
-  <!-- navbar -->
-  <div class="flex justify-between">
-    <a routerLink="/" class="">
-      <img src="assets/images/homepage/logo.png" alt="logo" class="" />
-    </a>
-
-    <div class="flex justify-center items-center gap-5 cursor-pointer">
-      <span><a routerLink="/menu"> Menu </a></span>
-      <span><a> About Us </a></span>
-      <span><a> Contact Us </a></span>
+  <div class="flex justify-center items-center gap-5 cursor-pointer">
+    <div class="relative">
+      <button>
+        <img
+          src="assets/images/homepage/search.png"
+          alt="search"
+          class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+        />
+      </button>
+      <input
+        type="text"
+        name="search"
+        id="search"
+        class="border bg-gray-200 rounded-lg py-1 pl-10"
+        placeholder="Search"
+      />
     </div>
 
-    <div class="flex justify-center items-center gap-5 cursor-pointer">
-      <div class="relative">
-        <button>
-          <img
-            src="assets/images/homepage/search.png"
-            alt="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
-          />
-        </button>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          class="border bg-gray-200 rounded-lg py-1 pl-10"
-          placeholder="Search"
+    <button *ngIf="isLoggedIn" (click)="logOut()">
+      <div class="flex justify-center">
+        <img
+          src="assets/images/navbar/avatar.jpg"
+          alt="avatar"
+          class="w-10 h-8 rounded-full"
         />
       </div>
-
-      <button *ngIf="isLoggedIn" (click)="logOut()">
-        <div class="flex justify-center">
-          <img
-            src="assets/images/navbar/avatar.jpg"
-            alt="avatar"
-            class="w-10 h-8 rounded-full"
-          />
-        </div>
-      </button>
-      <button
-        *ngIf="!isLoggedIn"
-        routerLink="login"
-        class="border bg-[#543310] text-white px-3 rounded-md py-1"
+    </button>
+    <button
+      *ngIf="!isLoggedIn"
+      routerLink="login"
+      class="border bg-[#543310] text-white px-3 rounded-md py-1"
+    >
+      Login
+    </button>
+    <div class="relative">
+      <img
+        src="assets/images/navbar/coffeecart3.png"
+        alt="coffeecart"
+        class="max-w-[50px] m"
+      />
+      <span
+        class="absolute -top-2 right-0 left-9 bg-[#AF8F6F] text-white rounded-full w-6 h-6 flex items-center justify-center"
+        >{{ itemNumber }}</span
       >
-        Login
-      </button>
     </div>
   </div>
 </div>

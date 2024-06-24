@@ -11,6 +11,12 @@
       "fullName": "Zeyar",
       "email": "zeyar@gmail.com",
       "password": "Zeyar123"
+    },
+    {
+      "id": "c04a",
+      "fullName": "Zeyar Win Htet",
+      "email": "zeyarwinhtet@gmail.com",
+      "password": "Zeyar"
     }
   ]
 }

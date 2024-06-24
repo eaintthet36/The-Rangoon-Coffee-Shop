@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit{
+  ngOnInit(): void {
+  
+  }
+  cart: any[] = [];
+  itemList: any[]= [];
+  
   products =[ {
         
     "id": "1",
@@ -49,28 +56,24 @@ export class MenuComponent {
 "image": "assets/images/homepage/caramel.png"
 },
 {
-"id": "2",
-"title": "Caramel Latte",
-"description": "Description of Product B",
-"price": 29.99,
-"image": "assets/images/homepage/caramel.png"
-},
-
-{
-"id": "2",
-"title": "Caramel Latte",
-"description": "Description of Product B",
-"price": 29.99,
-"image": "assets/images/homepage/caramel.png"
-},
-{
   "id": "2",
   "title": "Caramel Latte",
   "description": "Description of Product B",
   "price": 29.99,
   "image": "assets/images/homepage/caramel.png"
-  },
+  },{
+    "id": "2",
+    "title": "Caramel Latte",
+    "description": "Description of Product B",
+    "price": 29.99,
+    "image": "assets/images/homepage/caramel.png"
+    }
 ]
-
-constructor(){}
+constructor(private menuService: MenuService) {}
+addToCart(product: { title: any}) {
+  this.cart.push(product.title);
+  const itemNumber = this.cart.length;
+  console.log('Current cart:', this.cart, 'Length', itemNumber);
+  this.menuService.updateItemNumber(itemNumber); 
+}
 }
