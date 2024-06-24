@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';import { SuccessComponent } from './pages/login/login-dialogs/success/success.component';
 import { FailComponent } from './pages/login/login-dialogs/fail/fail.component';
+import { MenuComponent } from './pages/menu/menu.component';
 ;
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FailComponent } from './pages/login/login-dialogs/fail/fail.component';
     FooterComponent,
     SuccessComponent,
     FailComponent,
+    MenuComponent,
 
   ],
   imports: [
