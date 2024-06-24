@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit{
   
   }
   cart: any[] = [];
+  itemList: any[]= [];
   
   products =[ {
         
@@ -73,6 +74,6 @@ addToCart(product: { title: any}) {
   this.cart.push(product.title);
   const itemNumber = this.cart.length;
   console.log('Current cart:', this.cart, 'Length', itemNumber);
-  this.menuService.updateItemNumber(itemNumber); // Update itemNumber in the service
+  this.menuService.updateItemNumber(itemNumber); 
 }
 }
