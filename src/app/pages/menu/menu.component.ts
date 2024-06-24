@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit{
   
   }
   cart: any[] = [];
-  itemList: any[]= [];
+ cartList: any[] =[];
   
   products =[ {
         
@@ -70,10 +70,17 @@ export class MenuComponent implements OnInit{
     }
 ]
 constructor(private menuService: MenuService) {}
-addToCart(product: { title: any}) {
-  this.cart.push(product.title);
+addToCart(product: {id: any}) {
+  this.cart.push(product.id);
   const itemNumber = this.cart.length;
+
+  this.cartList.push(product);
+  const cartLists = this.cartList;
+
+  console.log(cartLists, 'Cart Listsss');
+  
   console.log('Current cart:', this.cart, 'Length', itemNumber);
   this.menuService.updateItemNumber(itemNumber); 
 }
+
 }

@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';import { SuccessCompo
 import { FailComponent } from './pages/login/login-dialogs/fail/fail.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { DetailProductComponent } from './detail-product/detail-product.component';
 ;
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     FailComponent,
     MenuComponent,
     AboutUsComponent,
+    DetailProductComponent,
 
   ],
   imports: [

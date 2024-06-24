@@ -58,16 +58,18 @@
     >
       Login
     </button>
-    <div class="relative">
-      <img
-        src="assets/images/navbar/coffeecart3.png"
-        alt="coffeecart"
-        class="max-w-[50px] m"
-      />
-      <span
-        class="absolute -top-2 right-0 left-9 bg-[#AF8F6F] text-white rounded-full w-6 h-6 flex items-center justify-center"
-        >{{ itemNumber }}</span
-      >
-    </div>
+    <button routerLink="/add-to-cart">
+      <div class="relative">
+        <img
+          src="assets/images/navbar/coffeecart3.png"
+          alt="coffeecart"
+          class="max-w-[50px] m"
+        />
+        <span
+          class="absolute -top-2 right-0 left-9 bg-[#AF8F6F] text-white rounded-full w-6 h-6 flex items-center justify-center"
+          >{{ itemNumber }}</span
+        >
+      </div>
+    </button>
   </div>
 </div>
