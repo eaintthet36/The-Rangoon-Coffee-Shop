@@ -5,7 +5,20 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MenuService {
+  currentProducts: any;
   constructor() {}
+  // Products
+  private allProducts = new BehaviorSubject<any[]>([]);
+  productList = this.allProducts.asObservable();
+
+ aProducts(products: any[]){
+  const currentProducts = this.allProducts.getValue();
+  currentProducts.push(products);
+  this.allProducts.next(currentProducts);
+  console.log(this.allProducts.getValue(),"THis is all products");
+  
+ }
+
   // number for array
   private itemNumber = new BehaviorSubject<number>(0);
   itemNumber$ = this.itemNumber.asObservable();

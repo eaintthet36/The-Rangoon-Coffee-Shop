@@ -8,9 +8,10 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  ngOnInit(): void {}
+  
   cart: any[] = [];
   cartList: any[] = [];
+  allProduct: any[] = [];
   products = [
     {
       id: '1',
@@ -70,6 +71,11 @@ export class MenuComponent implements OnInit {
     },
   ];
   constructor(private menuService: MenuService, private _router: Router) {}
+
+  ngOnInit(): void {
+    this.allProduct.push(this.products);
+    this.menuService.aProducts(this.products);
+  }
   addToCart(product: { id: any }) {
     this.cart.push(product.id);
     const itemNumber = this.cart.length;
