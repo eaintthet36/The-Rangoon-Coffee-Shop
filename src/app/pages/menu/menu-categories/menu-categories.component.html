@@ -1,0 +1,32 @@
+<div class="flex gap-3 justify-center">
+  <button
+    class="rounded-full border-2 px-4 text-white"
+    [ngClass]="{
+      'border-[#543310] bg-[#ECB176]': selectedButton === 'hot',
+      'border-[#ECB176] bg-[#543310]': selectedButton !== 'hot'
+    }"
+    (click)="selectButton('hot')"
+  >
+    Hot
+  </button>
+  <button
+    class="rounded-full border-2 px-4 text-white"
+    [ngClass]="{
+      'border-[#543310] bg-[#ECB176]': selectedButton === 'cold',
+      'border-[#ECB176] bg-[#543310]': selectedButton !== 'cold'
+    }"
+    (click)="selectButton('cold')"
+  >
+    Cold
+  </button>
+  <button
+    class="rounded-full border-2 px-4 text-white"
+    [ngClass]="{
+      'border-[#543310] bg-[#ECB176]': selectedButton === 'breads',
+      'border-[#ECB176] bg-[#543310]': selectedButton !== 'breads'
+    }"
+    (click)="selectButton('breads')"
+  >
+    Breads
+  </button>
+</div>

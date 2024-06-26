@@ -21,6 +21,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { ProductDetailComponent } from './pages/menu/product-detail/product-detail.component';
+import { MenuCategoriesComponent } from './pages/menu/menu-categories/menu-categories.component';
 ;
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ProductDetailComponent } from './pages/menu/product-detail/product-deta
     AboutUsComponent,
     DetailProductComponent,
     ProductDetailComponent,
+    MenuCategoriesComponent,
 
   ],
   imports: [
