@@ -45,3 +45,8 @@ h1 {
 .buybtn:hover {
   background-color: #74512d;
 }
+.cartModal {
+  padding: 30px;
+  width: 100%;
+  background-color: #d8ae7e;
+}

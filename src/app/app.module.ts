@@ -20,6 +20,7 @@ import { FailComponent } from './pages/login/login-dialogs/fail/fail.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
+import { ProductDetailComponent } from './pages/menu/product-detail/product-detail.component';
 ;
 
 @NgModule({
@@ -35,6 +36,7 @@ import { DetailProductComponent } from './detail-product/detail-product.componen
     MenuComponent,
     AboutUsComponent,
     DetailProductComponent,
+    ProductDetailComponent,
 
   ],
   imports: [

@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ProductDetailComponent } from './pages/menu/product-detail/product-detail.component';
 
 
 
@@ -22,6 +23,9 @@ const routes: Routes = [
 },
 {
   path: 'menu', component: MenuComponent,
+},
+{
+path: 'product-detail', component: ProductDetailComponent,
 },
 {
   path: 'about-us', component: AboutUsComponent,

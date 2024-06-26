@@ -20,6 +20,7 @@
 
   <div class="flex justify-center items-center gap-5 cursor-pointer">
     <span><a routerLink="/"> Home </a></span>
+    <span><a routerLink="/menu"> Menu </a></span>
     <span><a routerLink="/about-us"> About Us </a></span>
     <span><a href=""> Contact Us </a></span>
   </div>
@@ -58,7 +59,7 @@
     >
       Login
     </button>
-    <button routerLink="/add-to-cart">
+    <button (click)="openCart()">
       <div class="relative">
         <img
           src="assets/images/navbar/coffeecart3.png"
@@ -73,3 +74,43 @@
     </button>
   </div>
 </div>
+<ng-template #cartModal>
+  <div class="cartModal">
+    <!-- close button -->
+    <div class="flex justify-end items-end w-full">
+      <button (click)="closeModal()">
+        <img
+          src="assets/images/navbar/closebutton.png"
+          alt=""
+          class="max-w-10"
+        />
+      </button>
+    </div>
+
+    <div class="pb-4 text-center"><h1>Your Order</h1></div>
+    <div>
+      <table class="table-auto w-full">
+        <tr>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+
+        <tr *ngFor="let list of cartList" class="text-center">
+          <td>{{ list.title }}</td>
+          <td class="text-center">
+            <img
+              src="{{ list.image }}"
+              alt="cartimage"
+              class="mx-auto max-w-32 block"
+            />
+          </td>
+          <td>{{ list.description }}</td>
+          <td>{{ list.price }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</ng-template>
