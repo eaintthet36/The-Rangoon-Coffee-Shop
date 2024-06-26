@@ -22,11 +22,11 @@
   <button
     class="rounded-full border-2 px-4 text-white transition duration-200 ease-in"
     [ngClass]="{
-      'border-[#543310] bg-[#ECB176]': selectedButton === 'breads',
-      'border-[#ECB176] bg-[#543310]': selectedButton !== 'breads'
+      'border-[#543310] bg-[#ECB176]': selectedButton === 'Dessert',
+      'border-[#ECB176] bg-[#543310]': selectedButton !== 'Dessert'
     }"
-    (click)="selectButton('breads')"
+    (click)="selectButton('Dessert')"
   >
-    Breads
+    Dessert
   </button>
 </div>
