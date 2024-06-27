@@ -9,15 +9,12 @@ import { MenuService } from 'src/app/services/menu.service';
 export class MenuCategoriesComponent implements OnInit {
   constructor(private menuService: MenuService) {}
   listOfProducts: any[] = [];
-
   selectedButton: string = '';
+
   ngOnInit(): void {
     this.menuService.productList.subscribe((allProducts) => {
       this.listOfProducts = allProducts;
-      console.log(this.listOfProducts, 'shi lr');
+      console.log(this.listOfProducts, 'Products');
     });
-  }
-  selectButton(button: string) {
-    this.selectedButton = button;
   }
 }

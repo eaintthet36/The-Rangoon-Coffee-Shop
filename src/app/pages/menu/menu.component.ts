@@ -8,7 +8,6 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  
   cart: any[] = [];
   cartList: any[] = [];
   allProduct: any[] = [];
@@ -17,6 +16,7 @@ export class MenuComponent implements OnInit {
       id: '1',
       title: 'Chocolate Cappuccino',
       description: 'Description of Product B',
+      categories: 'hot',
       price: 30,
       image: 'assets/images/homepage/cappuccino.png',
     },
@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
       id: '2',
       title: 'Caramel Latte',
       description: 'Description of Product B',
+      categories: 'cold',
       price: 29.99,
       image: 'assets/images/homepage/caramel.png',
     },
@@ -31,6 +32,7 @@ export class MenuComponent implements OnInit {
       id: '3',
       title: 'Mocha Latte',
       description: 'Description of Product B',
+      categories: 'dessert',
       price: 18.99,
       image: 'assets/images/homepage/mocha.png',
     },
@@ -38,6 +40,8 @@ export class MenuComponent implements OnInit {
       id: '4',
       title: 'Mocha Latte',
       description: 'Description of Product B',
+      categories: 'dessert',
+
       price: 29.99,
       image: 'assets/images/homepage/mocha.png',
     },
@@ -45,6 +49,7 @@ export class MenuComponent implements OnInit {
       id: '4',
       title: 'Mocha Latte',
       description: 'Description of Product B',
+      categories: 'dessert',
       price: 29.99,
       image: 'assets/images/homepage/mocha.png',
     },
@@ -52,6 +57,7 @@ export class MenuComponent implements OnInit {
       id: '2',
       title: 'Caramel Latte',
       description: 'Description of Product B',
+      categories: 'cold',
       price: 29.99,
       image: 'assets/images/homepage/caramel.png',
     },
@@ -59,6 +65,7 @@ export class MenuComponent implements OnInit {
       id: '2',
       title: 'Caramel Latte',
       description: 'Description of Product B',
+      categories: 'cold',
       price: 29.99,
       image: 'assets/images/homepage/caramel.png',
     },
@@ -66,6 +73,7 @@ export class MenuComponent implements OnInit {
       id: '2',
       title: 'Caramel Latte',
       description: 'Description of Product B',
+      categories: 'hot',
       price: 29.99,
       image: 'assets/images/homepage/caramel.png',
     },
