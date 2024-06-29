@@ -5,19 +5,24 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MenuService {
-  currentProducts: any;
   constructor() {}
   // Products
-  private allProducts = new BehaviorSubject<any[]>([]);
-  productList = this.allProducts.asObservable();
+  private allProducts = new BehaviorSubject<any[]>(this.loadInitialProducts());
+  public productList = this.allProducts.asObservable();
 
- aProducts(products: any[]){
-  const currentProducts = this.allProducts.getValue();
-  currentProducts.push(products);
-  this.allProducts.next(currentProducts);
-  console.log(this.allProducts.getValue(),"THis is all products");
-  
- }
+  aProducts(products: any[]) {
+    this.allProducts.next(products);
+    this.saveProducts(products);
+  }
+
+  private saveProducts(products: any[]) {
+    localStorage.setItem('allProducts', JSON.stringify(products));
+  }
+
+  private loadInitialProducts(): any[] {
+    const products = localStorage.getItem('allProducts');
+    return products ? JSON.parse(products) : [];
+  }
 
   // number for array
   private itemNumber = new BehaviorSubject<number>(0);
