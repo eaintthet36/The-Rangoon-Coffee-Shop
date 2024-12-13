@@ -25,6 +25,7 @@ import { FirstSessionComponent } from './pages/home/first-session/first-session.
 import { SecondSessionComponent } from './pages/home/second-session/second-session.component';
 import { ThirdSessionComponent } from './pages/home/third-session/third-session.component';
 import { MenuFirstSessionComponent } from './pages/menu/menu-first-session/menu-first-session.component';
+import { MenuSecondSessionComponent } from './pages/menu/menu-second-session/menu-second-session.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { MenuFirstSessionComponent } from './pages/menu/menu-first-session/menu-
     SecondSessionComponent,
     ThirdSessionComponent,
     MenuFirstSessionComponent,
+    MenuSecondSessionComponent,
   ],
   imports: [
     BrowserModule,
