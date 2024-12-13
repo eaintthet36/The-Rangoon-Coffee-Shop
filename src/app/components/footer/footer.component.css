@@ -1,4 +1,11 @@
-.footer {
-  color: white;
-  background-color: #543310;
+@font-face {
+  font-family: "InknutAntiqua-Regular";
+  src: url("/assets/fonts/InknutAntiqua-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font {
+  font-family: "InknutAntiqua-Regular", serif;
+  font-size: 16px;
 }

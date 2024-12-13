@@ -1,116 +1,53 @@
-<!-- header line -->
-<div class="flex items-center gap-3">
-  <div>
-    <img
-      src="assets/images/homepage/headerline.png"
-      alt="headline"
-      class="w-screen"
-    />
-  </div>
-  <div>
-    <img src="assets/images/homepage/cup.png" alt="cup" class="w-16 h-16" />
-  </div>
-</div>
-
-<!-- navbar -->
-<div class="flex justify-between">
-  <a routerLink="/">
-    <img src="assets/images/homepage/logo.png" alt="logo" class="" />
-  </a>
-
-  <div class="flex justify-center items-center gap-5 cursor-pointer">
-    <span><a routerLink="/"> Home </a></span>
-    <span><a routerLink="/menu"> Menu </a></span>
-    <span><a routerLink="/about-us"> About Us </a></span>
-    <span><a href=""> Contact Us </a></span>
-  </div>
-
-  <div class="flex justify-center items-center gap-5 cursor-pointer">
-    <div class="relative">
-      <button>
-        <img
-          src="assets/images/homepage/search.png"
-          alt="search"
-          class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
-        />
-      </button>
-      <input
-        type="text"
-        name="search"
-        id="search"
-        class="border bg-gray-200 rounded-lg py-1 pl-10"
-        placeholder="Search"
+<!-- navigation bar -->
+<div class="my-5">
+  <div class="grid grid-cols-3 gap-4">
+    <div class="">
+      <img
+        src="assets/images/navbar/shoplogo.png"
+        alt="The Rangoon Coffee Shop"
+        class="w-[200px]"
       />
     </div>
-
-    <button *ngIf="isLoggedIn" (click)="logOut()">
-      <div class="flex justify-center">
-        <img
-          src="assets/images/navbar/avatar.jpg"
-          alt="avatar"
-          class="w-10 h-8 rounded-full"
-        />
+    <div class="flex justify-between items-center font-semibold">
+      <span
+        ><a routerLink="/" class="hover:text-[#964F05] hover:underline">
+          Home
+        </a></span
+      >
+      <span
+        ><a routerLink="/menu" class="hover:text-[#964F05] hover:underline">
+          Products
+        </a></span
+      >
+      <span
+        ><a routerLink="/about-us" class="hover:text-[#964F05] hover:underline">
+          About Us
+        </a></span
+      >
+      <span
+        ><a href="" class="hover:text-[#964F05] hover:underline">
+          Contact Us
+        </a></span
+      >
+    </div>
+    <div class="flex justify-end items-center px-24">
+      <button
+        *ngIf="!isLoggedIn"
+        class="bg-[#7B3F00] text-white px-3 py-2 rounded-full font-semibold shadow-md"
+        (click)="toLogin()"
+      >
+        Sign Up/Login
+      </button>
+      <div class="flex justify-center items-center gap-4" *ngIf="isLoggedIn">
+        <button (click)="logOut()">
+          <img
+            src="assets/images/navbar/avatarprofile.png"
+            alt="Profile"
+            class="w-[30px]"
+          />
+        </button>
+        <span>{{ this.user }}</span>
       </div>
-    </button>
-    <button
-      *ngIf="!isLoggedIn"
-      routerLink="login"
-      class="border bg-[#543310] text-white px-3 rounded-md py-1"
-    >
-      Login
-    </button>
-    <button (click)="openCart()">
-      <div class="relative">
-        <img
-          src="assets/images/navbar/coffeecart3.png"
-          alt="coffeecart"
-          class="max-w-[50px] m"
-        />
-        <span
-          class="absolute -top-2 right-0 left-9 bg-[#AF8F6F] text-white rounded-full w-6 h-6 flex items-center justify-center"
-          >{{ itemNumber }}</span
-        >
-      </div>
-    </button>
+    </div>
   </div>
 </div>
-<ng-template #cartModal>
-  <div class="cartModal">
-    <!-- close button -->
-    <div class="flex justify-end items-end w-full">
-      <button (click)="closeModal()">
-        <img
-          src="assets/images/navbar/closebutton.png"
-          alt=""
-          class="max-w-10"
-        />
-      </button>
-    </div>
-
-    <div class="pb-4 text-center"><h1>Your Order</h1></div>
-    <div>
-      <table class="table-auto w-full">
-        <tr>
-          <th>Title</th>
-          <th>Image</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Quantity</th>
-        </tr>
-
-        <tr *ngFor="let list of cartList" class="text-center">
-          <td>{{ list.title }}</td>
-          <td class="text-center">
-            <img
-              src="{{ list.image }}"
-              alt="cartimage"
-              class="mx-auto max-w-32 block"
-            />
-          </td>
-          <td>{{ list.description }}</td>
-          <td>{{ list.price }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</ng-template>

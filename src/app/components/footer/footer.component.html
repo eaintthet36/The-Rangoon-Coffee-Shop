@@ -1,55 +1,132 @@
-<div class="footer">
-  <div class="py-2">
-    <div class="flex justify-between items-center px-8 py-1 gap-3">
-      <!-- social -->
-      <div class="flex justify-center items-center gap-3">
-        <button>
-          <img src="assets/images/footer/facebook.png" alt="" />
-        </button>
-        <button>
-          <img src="assets/images/footer/instagram.png" alt="" />
-        </button>
-      </div>
-      <!-- open hours -->
-      <div class="flex gap-2">
-        <div class="flex justify-center items-center">
-          <img src="assets/images/footer/clock.png" alt="" />
+<div class="bg-[#F2F1E7] mt-44 p-8">
+  <div class="grid grid-cols-5 gap-7">
+    <div class="flex justify-center">
+      <div class="grid grid-rows-2 gap-8">
+        <div>
+          <img
+            src="assets/images/footer/shoplogo.png"
+            alt="The Rangoon Coffee Shop"
+            class="w-[150px]"
+          />
         </div>
-
-        <div class="flex flex-col text-[12px]">
-          <span>Weekdays 7AM to 5PM</span>
-          <span>Weekend 8AM to 3PM</span>
-        </div>
-      </div>
-
-      <!-- contact -->
-      <div class="flex gap-2">
-        <div class="flex flex-col justify-center items-center gap-1">
-          <img src="assets/images/footer/phone.png" alt="" />
-          <img src="assets/images/footer/mail.png" alt="" />
-        </div>
-
-        <div class="flex flex-col text-[12px]">
-          <span>+959 264 5074 09</span>
-          <a href="">therangooncoffeeshop&#64;gmail.com</a>
-        </div>
-      </div>
-
-      <!-- location  -->
-      <div class="flex gap-2">
-        <div class="flex justify-center items-center">
-          <img src="assets/images/footer/location.png" alt="" />
-        </div>
-
-        <div class="flex flex-col text-[12px]">
-          <span class="">No.26(B), Myay Nu Street , Myaynigone, Yangon.</span>
+        <div class="flex flex-row gap-4">
+          <div>
+            <img
+              src="assets/images/footer/facebook.png"
+              alt="Facebook"
+              class="w-[30px]"
+            />
+          </div>
+          <div>
+            <img src="assets/images/footer/x.png" alt="X" class="w-[30px]" />
+          </div>
+          <div>
+            <img
+              src="assets/images/footer/instagram.png"
+              alt="X"
+              class="w-[30px]"
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/footer/linkin.png"
+              alt="X"
+              class="w-[30px]"
+            />
+          </div>
         </div>
       </div>
     </div>
+    <div class="text-start">
+      <p class="font">Pages</p>
+      <div class="flex flex-col pt-5 gap-5 text-[14px]">
+        <span><a routerLink="/" class="hover:text-[#964F05]"> Home </a></span>
+        <span
+          ><a routerLink="/menu" class="hover:text-[#964F05]">
+            Products
+          </a></span
+        >
+        <span
+          ><a routerLink="/about-us" class="hover:text-[#964F05]">
+            About Us
+          </a></span
+        >
+        <span><a href="" class="hover:text-[#964F05]"> Contact Us </a></span>
+      </div>
+    </div>
+    <div class="text-start">
+      <p class="font">Informations</p>
+      <div class="flex flex-col pt-5 gap-5 text-[14px]">
+        <span><a routerLink="/" class="hover:text-[#964F05]"> FAQ </a></span>
+        <span
+          ><a routerLink="/menu" class="hover:text-[#964F05]">
+            Client Support
+          </a></span
+        >
+        <span
+          ><a routerLink="/about-us" class="hover:text-[#964F05]">
+            Terms and Condition
+          </a></span
+        >
+        <span
+          ><a href="" class="hover:text-[#964F05]"> Privacy Policy </a></span
+        >
+      </div>
+    </div>
+    <div class="text-start">
+      <p class="font">Shop Info</p>
+      <div class="flex flex-col pt-5 gap-5 text-[14px]">
+        <span class="flex justify-start items-center gap-2">
+          <mat-icon>storefront</mat-icon>
+          <a routerLink="/" class="hover:text-[#964F05]">
+            The Rangoon shop
+          </a></span
+        >
+        <span class="flex justify-start items-center gap-2">
+          <mat-icon>call</mat-icon
+          ><a routerLink="/menu" class="hover:text-[#964F05]">
+            +959 5224 7683
+          </a></span
+        >
+        <span class="flex justify-start items-center gap-2"
+          ><mat-icon>mail</mat-icon>
+          <a routerLink="/about-us" class="hover:text-[#964F05]">
+            therangooncofeshop
+          </a></span
+        >
+        <span class="flex justify-start items-center gap-2"
+          ><mat-icon>location_on</mat-icon>
+          <a href="" class="hover:text-[#964F05]">
+            No.23, Myay Nu street, Myaynigone, Yagon.
+          </a></span
+        >
+      </div>
+    </div>
+    <div class="text-start">
+      <p class="font">Opening Hours</p>
+      <div class="flex flex-col pt-5 gap-5 text-[14px]">
+        <span
+          ><a routerLink="/" class="hover:text-[#964F05]">
+            Monday - Friday : 8AM - 8PM
+          </a></span
+        >
+        <span
+          ><a routerLink="/menu" class="hover:text-[#964F05]">
+            Saturday : 9AM - 4PM
+          </a></span
+        >
+        <span
+          ><a routerLink="/about-us" class="hover:text-[#964F05]">
+            Sunday : Closed
+          </a></span
+        >
+      </div>
+    </div>
   </div>
-  <div class="bg-white">
-    <p class="text-[#543310] text-[12px] font-bold text-center p-1">
-      Copyright © 2024. All rights reserved by The Rangoon Coffee Shop Co., Ltd.
+  <div class="border-b-2 mx-[100px] border-[#7C7C7C]"></div>
+  <div class="pt-6">
+    <p class="text-center">
+      Copy right @ 2024 The Rangoon Coffee Shop.All rights reserved.
     </p>
   </div>
 </div>

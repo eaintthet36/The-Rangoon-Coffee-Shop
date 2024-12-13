@@ -1,52 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Inter", sans-serif;
+  overflow: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.container {
-  padding: 20px;
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-h1 {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.menubtn {
-  background-color: #543310;
-  color: white;
-  border: none;
-  padding: 7px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.menubtn:hover {
-  background-color: #74512d;
-}
-
-.buybtn {
-  background-color: #543310;
-  color: white;
-  border: none;
-  padding: 2px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.buybtn:hover {
-  background-color: #74512d;
-}
-.cartModal {
-  padding: 30px;
-  width: 100%;
-  background-color: #d8ae7e;
+h1,
+h2,
+h3 {
+  font-family: "Inter", sans-serif;
 }

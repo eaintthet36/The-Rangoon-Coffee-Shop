@@ -7,49 +7,37 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  
-  cartList: any[] = [];
-  itemNumber: number = 0;
   isLoggedIn: boolean = false;
+  user: any;
+  routerLinkActive: any;
+  constructor(
+    private router: Router,
+    private shareService: ShareService,
+    private menuService: MenuService,
+    private _dialog: MatDialog
+  ) {}
 
-  constructor(private router:Router, private shareService:ShareService, private menuService: MenuService,private _dialog: MatDialog, ){}
-
-  private _modal!: MatDialogRef<any>
-  @ViewChild('cartModal') cartModal!: TemplateRef<any>;
+  private _modal!: MatDialogRef<any>;
 
   ngOnInit(): void {
-    this.shareService.getLoginStatus().subscribe(status => {
+    this.shareService.getLoginStatus().subscribe((status) => {
       this.isLoggedIn = status;
-      
     });
-    this.menuService.itemNumber$.subscribe(itemNumber => {
-      this.itemNumber = itemNumber;
-    });
-    this.menuService.currentCartList.subscribe(cartList => {
-      this.cartList = cartList;
-    });
+    this.user = sessionStorage.getItem('email');
   }
-  toLogin(){
+  toLogin() {
     this.router.navigate(['login']);
   }
-  logOut(){
+  logOut() {
     sessionStorage.clear();
     this.isLoggedIn = false;
     this.router.navigate(['login']);
   }
- 
-  openCart() {
-      this._modal = this._dialog.open(this.cartModal, {
-        width: '50%',
-        disableClose: true,
-      });
-    
-  }
 
-  closeModal(){
+  closeModal() {
     this._modal.close();
   }
 }
