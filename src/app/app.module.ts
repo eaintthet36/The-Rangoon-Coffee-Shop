@@ -26,6 +26,10 @@ import { SecondSessionComponent } from './pages/home/second-session/second-sessi
 import { ThirdSessionComponent } from './pages/home/third-session/third-session.component';
 import { MenuFirstSessionComponent } from './pages/menu/menu-first-session/menu-first-session.component';
 import { MenuSecondSessionComponent } from './pages/menu/menu-second-session/menu-second-session.component';
+import { CoffeeComponent } from './pages/menu/menu-second-session/components/coffee/coffee.component';
+import { TeaComponent } from './pages/menu/menu-second-session/components/tea/tea.component';
+import { DessertComponent } from './pages/menu/menu-second-session/components/dessert/dessert.component';
+import { FoodComponent } from './pages/menu/menu-second-session/components/food/food.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +48,10 @@ import { MenuSecondSessionComponent } from './pages/menu/menu-second-session/men
     ThirdSessionComponent,
     MenuFirstSessionComponent,
     MenuSecondSessionComponent,
+    CoffeeComponent,
+    TeaComponent,
+    DessertComponent,
+    FoodComponent,
   ],
   imports: [
     BrowserModule,

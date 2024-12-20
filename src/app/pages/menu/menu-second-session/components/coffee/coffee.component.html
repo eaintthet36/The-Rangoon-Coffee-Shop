@@ -1,0 +1,33 @@
+<div>
+  <div class="flex flex-wrap justify-center gap-12 mx-[260px]">
+    <div *ngFor="let item of coffees">
+      <div
+        class="bg-[#F2F1E7] p-2 rounded-lg cursor-pointer"
+        (click)="detailProduct(item)"
+      >
+        <div>
+          <img [src]="item.image" alt="" class="w-[234px]" />
+        </div>
+        <div class="flex justify-between items-center">
+          <p class="pt-2">{{ item.name }}</p>
+          <div class="flex gap-1 items-center">
+            <div>
+              <img [src]="item.star" alt="" class="w-[18px]" />
+            </div>
+            <p class="flex gap-1 items-center">{{ item.rating }}</p>
+          </div>
+        </div>
+        <p class="text-[12px] text-[#444444]">{{ item.des }}</p>
+        <div class="flex justify-between items-center text-[14px]">
+          <p>{{ item.price }}</p>
+          <button class="bg-[#7B3F00] rounded-full px-3 py-1 text-white">
+            <div class="flex gap-3 items-center">
+              <mat-icon>shopping_cart</mat-icon>
+              <span>Buy</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
